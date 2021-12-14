@@ -1,3 +1,5 @@
+agentName = "Windows"
+agentLabel = "${println 'Right Now the Agent Name is ' + agentName; return agentName}"
 pipeline {
 
   agent none
@@ -9,7 +11,7 @@ pipeline {
   stages {
 
     stage("build") {
-      agent { node {label 'controller'}}
+      agent { node {label agentLabel}}
       environment {
         DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
       }
