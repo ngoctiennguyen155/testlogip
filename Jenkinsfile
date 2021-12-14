@@ -3,7 +3,7 @@ pipeline {
   agent none
 
   environment {
-    DOCKER_IMAGE = "7ien/"
+    DOCKER_IMAGE = "7ien/testlogip"
   }
 
   stages {
